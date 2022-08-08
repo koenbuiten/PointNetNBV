@@ -1,9 +1,25 @@
-# Pointnet NBV selection
-## Data creation
+# PointNet Next-Best-View
+## Multi-view 3D Object Recognition: Selecting Best Sequences of Views
+![Image of network](NBV_CLS_Horizontal.png)
+The pipeline starts with an initial random view chosen from the 40 possible viewpoints. The 2D
+RGB image of this view goes into the ResNet classification model, and the value of the output vector
+with the highest confidence score is compared to a threshold. If the threshold is reached, we con-
+sider the class which belongs to this confidence score as the predicted object class. If it is lower, the
+point cloud of the respective view serves as input for the PointNet model. A fully connected neural
+network predicts the local entropy map from the PointNet feature. The local entropy map’s highest
+peak and lowest valley are extracted and used for the NBV selection. Depending on the object, the
+peak or valley is considered the next-best-view. The 2D image of this view serves as input for the
+ResNet classification model. The output of the ResNet model is added to the previously predicted
+features. The accumulated feature goes into a softmax layer and outputs the confidence scores. This
+continues until either the threshold for the confidence score is reached or if a total number of five
+viewpoints are explored. Next to the prediction of the local entropy map, we also trained a model
+which predicts the local classification performance map.
+# Usage
 Install dependencies:
 ```
 pip install requirements.txt
 ```
+## Data creation
 
 Create datasets:
 ```
@@ -138,3 +154,5 @@ python NBV_testing.py --data Datasets/modelnet10_40 \
 --num_classes_cls 10 \
 --verbose
 ```
+
+# Demo

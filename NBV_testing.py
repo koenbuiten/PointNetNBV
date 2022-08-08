@@ -10,7 +10,7 @@ import pandas as pd
 
 from scipy.special import softmax
 from models.resnet import resnet34
-from NBV import NBV, baselineNBV
+from models.NBV import NBV, baselineNBV
 from utils.util import printProgressBar
 import time
 
