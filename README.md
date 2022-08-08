@@ -156,3 +156,20 @@ python NBV_testing.py --data Datasets/modelnet10_40 \
 ```
 
 # Demo
+python demo.py [--object_data  <path/to/example_data>]
+[--cls_model_path <path/to/classification_model}]
+[--nbv_model_path <path/to/nbv_model>]
+[--nbv_method {LEM,LCM}]
+[--threshold FLOAT]
+[--max_views INT]
+```
+Example (default values):
+```
+python demo.py [--object_data 'data/table_0400']
+[--cls_model_path 'LEMnet10_40_entropy.pth.tar']
+[--nbv_model_path 'resnet_34_singleview_M10_40_b32.pth.tar']
+[--nbv_method 'LEM']
+[--threshold 0.99]
+[--max_views 5]
+```
+
