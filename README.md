@@ -156,6 +156,7 @@ python NBV_testing.py --data Datasets/modelnet10_40 \
 ```
 
 # Demo
+```
 python demo.py [--object_data  <path/to/example_data>]
 [--cls_model_path <path/to/classification_model}]
 [--nbv_model_path <path/to/nbv_model>]
@@ -164,6 +165,7 @@ python demo.py [--object_data  <path/to/example_data>]
 [--max_views INT]
 ```
 Example (default values):
+
 ```
 python demo.py [--object_data 'data/table_0400']
 [--cls_model_path 'LEMnet10_40_entropy.pth.tar']
