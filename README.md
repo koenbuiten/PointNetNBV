@@ -130,9 +130,11 @@ python NBV_testing.py --data Datasets/modelnet10_40 \
 --verbose
 ```
 
+```
 Example 2:
 python NBV_testing.py --data Datasets/modelnet10_40 \
 --nbv_type random \
 --cls_model_path model_saves/resnet_18_modelnet10_40.pth.tar \
 --num_classes_cls 10 \
 --verbose
+```
